@@ -47,15 +47,15 @@ def user_choice(choice):
 
 def brewing(ratio):
     '''Calculate amount of water related to coffee beans'''
-    beans = input("How much coffee beans to use (grams): ")
+    beans = input("How much coffee beans to use (g): ")
     water = (int(beans) * ratio) / 1000
     return water
 
 
 def diluting_concentrate(ratio):
     '''Calculate amount of water to add to concentrate'''
-    real_concentrate = input("How much concentrate do you have (liter): ")
-    water = float(real_concentrate) * ratio
+    concentrate = input("How much concentrate do you have (ml): ")
+    water = (int(concentrate) * ratio) / 1000
     return water
 
 
@@ -74,7 +74,7 @@ def cleanup(exit_code):
 
     # Normal exit.
     else:
-        print("\n  Enjoy your Cold Brew  \n")
+        print("\n🥶 Enjoy your Cold Brew 🥶\n")
         time.sleep(1)
         sys.exit(exit_code)
 
