@@ -10,9 +10,18 @@ def make_choice():
     intro = dedent('''\
                     What type of Cold Brew to you want to brew?
 
-                    ➀ Brewing a concentrate         (ratio, 1:5)
-                    ➁ Brewing a "Ready to drink CB" (ratio, 1:14)
-                    ➂ Diluting concentrate to CB    (ratio, 1:3)
+                    ➀ Brewing a concentrate
+                      ratio, 1:5
+                      e.g. 200g beans + 1l water > 700ml concentrate
+
+                    ➁ Brewing a "Ready to drink CB"
+                      ratio, 1:14
+                      e.g. 18g beans + 252ml water > 1cup CB
+
+                    ➂ Diluting concentrate to CB
+                      ratio, 1:2.7
+                      e.g. 250ml concentrate + 675ml water > 925ml CB
+
                     ➃ Quit''')
 
     print(f'{intro}\n')
@@ -35,10 +44,10 @@ def user_choice(choice):
             print(f"\nTo prepare ready to drink CB, you'll need {brewing(ratio)} liter of water.")
         # Concentrate diluting.
         case 3:
-            ratio = 3
+            ratio = 2.7
             print(f"\nTo dilute it, you'll need {diluting_concentrate(ratio):.1f} liter of water.")
         case 4:
-            print("Bye.")
+            print("Bye 👋")
             cleanup(2)
         case _:
             print("Invalid choice, bye.")
